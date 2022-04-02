@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock title %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/card_styles.css' %} ">
+    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/style.css' %} ">
+{% endblock cssfiles %}
+
+{% block content %}
+    <center>
+        <div class="card_wrapper">
+            <div class="card">
+                <div imgbox>
+                    <img src=" {% static 'oxygenCylinder/images/card 1.webp' %} " alt="Pic" class="pics">
+                </div>
+                
+                <div class="content">
+                    <h1 class="Heading" >Coronavirus (COVID-19) Prevention: 12 Tips and Strategies</h1>
+                    <button class="contentButton" onclick="window.open('page1.html')">Read More</button>
+                </div>
+            </div>
+                <div class="card">
+                    <div imgbox>
+                        <img src=" {% static 'oxygenCylinder/images/card 2.webp' %}  " alt="Pic" class="pics">
+                    </div>
+                    
+                    <div class="content">
+                        <h1>Notes</h1>
+                        <p>Hii there is notes</p>
+                        <button class="contentButton">Click</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div imgbox>
+                        <img src=" {% static 'oxygenCylinder/images/card 3.jpg' %} " alt="Pic" class="pics">
+                    </div>
+                    
+                    <div class="content">
+                        <h1>Notes</h1>
+                        <p>Hii there is notes</p>
+                        <button class="contentButton">Click</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </center>
+{% endblock content %}
