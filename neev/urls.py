@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("oxygenCylinder.urls")),
     # path('login/', include('authenticationAPI.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

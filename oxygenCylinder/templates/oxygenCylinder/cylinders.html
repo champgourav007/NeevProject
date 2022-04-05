@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block cssfiles %}
+    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/table.css' %} ">
+    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/nav.css' %} ">
+{% endblock cssfiles %}
+
+{% block title %} Oxygen Cylinder{% endblock title %}
+
+	
+{% block content %}
+  <div class="animation start-home"></div>
+</nav>
+  <section>
+    <table height="30%" width="100%" border="1px">
+      <tr> 
+        <th colspan="3" height="50px"><h2>Search oxygen cylinder beds</h3></th>
+      </tr>
+      <tr>
+        <td>
+        <form id="form" role="search">
+          <input type="search" id="query" name="q"
+          placeholder="Search State"
+          aria-label="Search through site content">
+          
+        </form>
+        </td>
+        <td>
+        <form id="form" role="search">
+          <input type="search" id="query" name="q"
+          placeholder="Search District"
+          aria-label="Search through site content">
+          
+        </form>
+        </td>
+        <td>
+          <form id="form" role="search">
+            <input type="search" id="query" name="q"
+            placeholder="Search City"
+            aria-label="Search through site content">
+            
+          </form>
+          </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <!--for demo wrap-->
+    <h4>RESULTS</h4>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="4">
+        <thead>
+          <tr>
+            <th class="heading1">S.No</th>
+            <th class="heading2">Hospital Name</th>
+            <th class="heading3">Category</th>
+            <th class="heading4">Availabilty</th>
+            <th class="heading5">Last Updated</th>
+            <th class="heading6">Booking</th>
+          </tr>
+      </table>
+
+  </section>
+      
+      
+{% endblock content %}
+	
