@@ -24,25 +24,25 @@
 
 5. Now ctrl+click on  ```http://127.0.0.1:8000/```.
 
-<img src="extrafiles/img1.png">
+<img src="extrafiles/images/img1.png">
 
-<img src="extrafiles/img2.png">
+<img src="extrafiles/images/img2.png">
 
-<img src="extrafiles/img3.png">
+<img src="extrafiles/images/img3.png">
 
-<img src="extrafiles/img4.png">
+<img src="extrafiles/images/img4.png">
 
-<img src="extrafiles/img5.png">
+<img src="extrafiles/images/img5.png">
 
-<img src="extrafiles/img6.png">
+<img src="extrafiles/images/img6.png">
 
-<img src="extrafiles/img7.png">
+<img src="extrafiles/images/img7.png">
 
-<img src="extrafiles/img8.png">
+<img src="extrafiles/images/img8.png">
 
-<img src="extrafiles/img9.png">
+<img src="extrafiles/images/img9.png">
 
-<img src="extrafiles/img10.png">
+<img src="extrafiles/images/img10.png">
 
-<img src="extrafiles/img11.png">
+<img src="extrafiles/images/img11.png">
 
