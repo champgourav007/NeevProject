@@ -25,7 +25,11 @@
         {% csrf_token %}
         <div  class="dropdown-content1">
           <select id="state-select" name="state"  class="dropbtn" >
+            {% if clickedstate %}
+              <option  name="">{{clickedstate}}</option>
+            {% endif %}
             <option  name="">Select State</option>
+
 
             {% for state in states %}
                <option name="{{state.id}}">{{state.name}}</option>
@@ -39,7 +43,11 @@
         {% csrf_token %}
         <div class="dropdown-content1">
           <select name="city" id="city-select" class="dropbtn" >
-            <option value="">Select City</option>
+            {% if clickedcity %}
+              <option value="">{{clickedcity}}</option>
+              {% else %}
+              <option value="">Select City</option>
+            {% endif %}
             {% for city in cities %}
                <option value="{{city.id}}">{{city.name}}</option>
             {% endfor %}
@@ -60,6 +68,7 @@
                 <th class="heading3">Category</th>
                 <th class="heading4">Availabilty</th>
                 <th class="heading5">Last Updated</th>
+                <th class="heading4">Phone No</th>
                 <th class="heading6">Booking</th>
               </tr>
                 {% if services %}
@@ -71,9 +80,10 @@
                     <td>Hospital Beds</td>
                       <td>{{service.services.available_beds}}/{{service.services.total_beds}}</td>
                       <td>{{service.services.last_updated}}</td>
+                      <td>{{ service.phone_number }}</td>
                       <td>
-                        {% if service.services.available_beds %}
-                        <button style= "background-color: #16a085;text-align:center;font-size: 16px;text-decoration: double,display: inline-block,border-radius: 2px;border: 2px solid black; width: 100px">
+                        {% if service.services.available_oxygen_cylinders %}
+                        <button style= "background-color: #16a085;text-align:center;font-size: 16px;text-decoration: double,border-radius: 2px;border: 2px solid black; width: 80px">
                             Book Now
                         </button>
                         {% endif %}
@@ -82,8 +92,8 @@
                   </tr>
                   {% endfor %}
                 {% else %}
-                 <tr><div><td colspan="6">{{"No Data Found"}}</td></div></tr>
-                {% endif %}
+                 <tr><div><td colspan="7">{{"No Data Found"}}</td></div></tr>
+                {% endif %} 
               
 
           </table>

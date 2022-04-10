@@ -4,18 +4,15 @@
 {% block title %}Home Page{% endblock title %}
 
 {% block content %}
-    <section class="home" id="home">
-
+<section class="home" id="home">
     <div class="image">
-        <img src="{% static 'image/home-img.svg' %}" alt="">
+        <img src=" {% static 'oxygenCylinder/image/home-img.svg' %} " alt="">
     </div>
-
     <div class="content">
-        <h3>Lets Pledge to Save Lives   </h3>
-        <p>provide oxygen to those in need  </p>
-        <a href=" " class="btn"> contact us <span class="fas fa-chevron-right"></span></a>
+        <h3>Empowering People with the power of healing</h3>
+        <p>Known for our expertise, chosen for our care</p>
+        <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span> </a>
     </div>
-
 </section>
 
 <!-- home section ends -->
@@ -62,24 +59,16 @@
 
         <div class="box">
             <i class="fas fa-pills"></i>
-            <h3>Oxygen Facility</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href=" {% url 'oxygen-page' %} " class="btn"> Book oxygen Cylinders <span class="fas fa-chevron-right"></span> </a>
+            <h3>Oxygen Cylinder Facility</h3>
+            <p>get the oxygen Availability data easily and book your cylinder according to your need. Click the link below and check out the available oxygen to your nearest location  </p>
+            
+            <a href=" {% url 'oxygen-page' %} " class="btn"> Book Oxygen Cyllinders <span class="fas fa-chevron-right"></span> </a>
         </div>
-
         <div class="box">
             <i class="fas fa-procedures"></i>
             <h3>Bed facility</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
+            <p>Get the bed Availability data easily and book your bed according to your own suitability. Click The Link Below And Check Out The Available beds To Your Nearest Location</p>
             <a href=" {% url 'beds-page' %} " class="btn"> Book Hospital Beds <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Blood</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
 
     </div>
 
@@ -90,24 +79,19 @@
 <!-- about section starts  -->
 
 <section class="about" id="about">
-
     <h1 class="heading"> <span>about</span> us </h1>
-
     <div class="row">
-
         <div class="image">
-            <img src="{% static 'image/about-img.svg' %}" alt="">
+            <img src="{% static 'oxygenCylinder/image/about-img.svg' %}" alt="">
         </div>
-
         <div class="content">
             <h3>we provide oxygen and beds to those in need </h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
-            <a href="#" id="aboutBtn" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            <p>Neev is a platform created with the view to bring an easy and more comfortable pathway to issue oxygen cylinders and ventilators in case of need.</p>
+           
+            <p>Here, you can find the beds and oxygen cylinders available at diiferent locations and can book a slot accoridng to your comfort sitting at your home. We have provided our uses the facility of checking  hospitals near a particular location all over india. You can either issue online or can call the selected clinic or hospital and ask for details manually.   </p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
         </div>
-
     </div>
-
 </section>
 
 <!-- about section ends -->
@@ -117,73 +101,47 @@
 
 
 <section class="doctors" id="doctors">
-
-    <h1 class="heading"> our <span> Team </span> </h1>
-
+    <h1 class="heading"> Team <span> NEEV </span> </h1>
     <div class="box-container">
-
         <div class="box">
-            <img src="{% static 'image/doc-1.jpg' %}" alt="">
-            <h3>Gourav Kumar Singh</h3>
-            <span>expert doctor</span>
+            <img src=" {% static 'oxygenCylinder/image/gourav.jpg' %} " alt="">
+            <h3>Gourav  Singh  </h3>
+            <span>Team Member </span>
             <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="{% static 'image/doc-1.jpg' %}" alt=""> 
-            <h3>Mansi Upreti</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-
-        <div class="box">
-            <img src="{% static 'image/doc-3.jpg' %}" alt="">
-            <h3>Mukul Upadhyay </h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class='fab fa-facebook-f'></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
             </div>
         </div>
         <div class="box">
-            <img src="{% static 'image/doc-3.jpg' %}" alt="">
-            <h3>Mukul Upadhyay</h3>
-            <span>expert doctor</span>
+            <img src=" {% static 'oxygenCylinder/image/dee (2).jpg' %} " alt=""> 
+            <h3>Harshita  Raghav</h3>
+            <span>Team Leader </span>
             <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+<div class="box">
+            <img src="  {% static 'oxygenCylinder/image/mukul.jpg' %} " alt="">
+            <h3> Mukul Updhyay </h3>
+            <span>Team Member </span>
+            <div class="share">
+            </div>
+        </div>
+        <div class="box">
+            <img src=" {% static 'oxygenCylinder/image/mansii.jpg' %} " alt="">
+            <h3>Mansi  Upreti </h3>
+            <span>Team Member </span>
+            <div class="share">
             </div>
         </div>
     </div>
-
 </section>
 
 
 
 <section class="review" id="review">
-    
     <h1 class="heading"> REVIEWS </h1>
-
     <div class="box-container">
-
         <div class="box">
-            <img src="{% static 'image/pic-1.png' %}" alt="">
-            <h3>Madhur Sharma </h3>
+            <img src=" {% static 'oxygenCylinder/image/mad.jpg' %} " alt="">
+            <h3>Anurag Tyagi </h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -191,37 +149,33 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+            <p class="text">I am really happy that there is this amazing website which provide these kind of facilities and that also without any hustle and delay. The process is so smooth and can save many lives. Just select the location of your choice and do the bookings or even if you want you can contact the selected clinic or hospital.</p>
         </div>
-
         <div class="box">
-            <img src="{% static 'image/pic-3.png' %}" alt="">
+            <img src=" {% static 'oxygenCylinder/image/hardik.jpg' %} " alt="">
             <h3>Tanveer Raza</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+               
             </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+            <p class="text">Hey everyone!!! I recommend everyone to use this website if there is any need of oxygen cylinder or oxygen beds and I am saying this on the basis of my personal experience. Few months ago, I wanted a hospital bed on urgent basis for one of my family members. I was alone at that time and I didn’t had time to make a call to the hospitals and checking for the bed’s availability.  So, this website quickly stroked in my head and with on go I found a bed in one of the nearest hospitals.</p>
         </div>
-
         <div class="box">
-            <img src="{% static 'image/pic-2.png' %}" alt="">
-            <h3>Dipanshi Rawat</h3>
+            <img src=" {% static 'oxygenCylinder/image/bro.png' %} " alt="">
+            <h3>Hardik Bansal</h3>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+              
             </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+            <p class="text">This really helped me a lot. Few days ago, one of my relative urgently required the oxygen cylinder and one of my friend told me about this website. I browsed this website and it quickly gave details of all the nearest hospitals having supply of oxygen cylinders and I was able to arrange it. From that day I recommend everyone this website if there is such kind of need.</p>
         </div>
-
     </div>
-
 </section>
 <!-- 
 review section ends
@@ -230,9 +184,7 @@ review section ends
 <!-- footer section starts  -->
 
 <section class="footer">
-
     <div class="box-container">
-
         <div class="box">
             <h3>quick links</h3>
             <a href="#"> <i class="fas fa-chevron-right"></i> About </a>
@@ -240,23 +192,19 @@ review section ends
             <a href="#"> <i class="fas fa-chevron-right"></i> Oxygen </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> reviews </a>
         </div>
-
         <div class="box">
             <h3>our services</h3>
             <a href="#"> <i class="fas fa-chevron-right"></i> bed facility  </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> oxygen facility  </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> blood donation  </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> free checkup  </a>
-            
         </div>
-
         <div class="box">
             <h3>contact info</h3>
             <a href="#"> <i class="fas fa-phone"></i> +91-7428621255 </a>
             <a href="#"> <i class="fas fa-phone"></i> +91-7017414967 </a>
-            <a href="#"> <i class="fas fa-envelope"></i> raghav.harshita21@gmail.com</a>
+            <a href="#"> <i class="fas fa-envelope"></i> harshitaraghav2001@gmail.com</a>
             <a href="#"> <i class="fas fa-envelope"></i> mukulupadhyaya2007@gmail.com </a>
-            <!-- <a href="#"> <i class="fas fa-map-marker-alt"></i> Ghaziabad, India - 201002 </a> -->
         </div>
 
         <div class="box">
