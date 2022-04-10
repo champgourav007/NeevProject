@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uriy3l+i79v0j@ti2(wy2beoqykkjx8#bxj54vv89e2+_*iv(u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,8 +140,17 @@ REST_FRAMEWORK = {
 
 # STATIC_ROOT = BASE_DIR / "static"
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "static"
 ]
+MEDIA_ROOT = BASE_DIR / "uploads"
+MEDIA_URL = "/files/"

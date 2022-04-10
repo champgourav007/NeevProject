@@ -1,9 +1,6 @@
-from audioop import reverse
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Cities, State, Hospital
 
-import oxygenCylinder
-from .models import Cities, State, Services, Hospital
 
 def load_state_cities():
     states = State.objects.all()
@@ -14,23 +11,13 @@ def load_state_cities():
         "services" : None,
     }
 
-def test(request):
-    return HttpResponse("hello")
 
 def home_page(request):
     return render(request, "oxygenCylinder/home_page.html")
 
-def fetch_oxygen_by_city(request, name):
-    # city = Cities.objects.get(name=name)
-    # hospitals = Hospital.objects.filter()
-    # print(city)
-
-    # print(services.total_oxygen_cylinders)
-    return render(request, "oxygenCylinder/oxygen-cylinders.html")
 
 def on_load_oxygen(request):
     if request.method == "POST":
-        # print(request.POST)
         if request.POST.get("state"):
             state = State.objects.get(name=request.POST["state"])
             cities = Cities.objects.filter(state_id=state.pk)
@@ -44,6 +31,7 @@ def on_load_oxygen(request):
     return render(request, "oxygenCylinder/oxygen-cylinders.html", context=context)
 
 
+
 def load_oxygen_cylinder(request):
     if request.method == "POST":
         cityId = request.POST["city"]
@@ -55,9 +43,10 @@ def load_oxygen_cylinder(request):
     context = load_state_cities()
     return render(request, "oxygenCylinder/oxygen-cylinders.html", context=context)
 
+
+
 def on_load_beds(request):
     if request.method == "POST":
-        # print(request.POST)
         if request.POST.get("state"):
             state = State.objects.get(name=request.POST["state"])
             cities = Cities.objects.filter(state_id=state.pk)
@@ -69,6 +58,8 @@ def on_load_beds(request):
             return render(request, "oxygenCylinder/hospital-beds.html",context=context)
     context = load_state_cities()
     return render(request, "oxygenCylinder/hospital-beds.html", context=context)
+
+
 
 def load_hospital_beds(request):
     if request.method == "POST":
