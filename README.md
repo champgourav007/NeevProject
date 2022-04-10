@@ -17,12 +17,13 @@
 
 ```Make sure you have Python3 installed in your system and pip as well```
 
-3. Type ```pip install -r requirements.txt```.(This Will install all the dependencies for the project)
-4. Now on terminal type ```python manage.py runserver```.
+3. Now go to the same directory where the ```NeevProject Folder``` is present.
+4. Type on terminal ```pip install -r requirements.txt```.(This Will install all the dependencies for the project)
+5. Now on terminal type ```python manage.py runserver```.
 
-<img src="extrafiles/terminal.png">
+<img src="extrafiles/images/terminal.png">
 
-5. Now ctrl+click on  ```http://127.0.0.1:8000/```.
+6. Now ctrl+click on  ```http://127.0.0.1:8000/```.
 
 <img src="extrafiles/images/img1.png">
 
