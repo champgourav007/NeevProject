@@ -25,6 +25,14 @@
 
 6. Now ctrl+click on  ```http://127.0.0.1:8000/```.
 
+# Flowchart
+* This is the overall flow of the project.
+<img src="extrafiles/images/flowchart.png">
+
+# Reference Video
+<video src=" extrafiles/videos/VID-20220410-WA0008.mp4 ">
+
+# Reference Images
 <img src="extrafiles/images/img1.png">
 
 <img src="extrafiles/images/img2.png">
