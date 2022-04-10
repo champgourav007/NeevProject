@@ -1,49 +1,278 @@
 {% extends 'index.html' %}
 {% load static %}
 
-{% block title %}Welcome{% endblock title %}
-
-{% block cssfiles %}
-    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/card_styles.css' %} ">
-{% endblock cssfiles %}
+{% block title %}Home Page{% endblock title %}
 
 {% block content %}
-    <center>
-        <div class="card_wrapper">
-            <div class="card">
-                <div imgbox>
-                    <img src=" {% static 'oxygenCylinder/images/card 1.webp' %} " alt="Pic" class="pics">
-                </div>
-                
-                <div class="content">
-                    <h1 class="Heading" >Coronavirus (COVID-19) Prevention: 12 Tips and Strategies</h1>
-                    <button class="contentButton" onclick="window.open('page1.html')">Read More</button>
-                </div>
-            </div>
-                <div class="card">
-                    <div imgbox>
-                        <img src=" {% static 'oxygenCylinder/images/card 2.webp' %}  " alt="Pic" class="pics">
-                    </div>
-                    
-                    <div class="content">
-                        <h1>Notes</h1>
-                        <p>Hii there is notes</p>
-                        <button class="contentButton">Click</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div imgbox>
-                        <img src=" {% static 'oxygenCylinder/images/card 3.jpg' %} " alt="Pic" class="pics">
-                    </div>
-                    
-                    <div class="content">
-                        <h1>Notes</h1>
-                        <p>Hii there is notes</p>
-                        <button class="contentButton">Click</button>
-                    </div>
-                </div>
-            </div>
+    <section class="home" id="home">
 
+    <div class="image">
+        <img src="{% static 'image/home-img.svg' %}" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Lets Pledge to Save Lives   </h3>
+        <p>provide oxygen to those in need  </p>
+        <a href=" " class="btn"> contact us <span class="fas fa-chevron-right"></span></a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-user-md"></i>
+        <h3>1000+</h3>
+        <p>Daily Providers</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <h3>1000+</h3>
+        <p>satisfied Customers</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-procedures"></i>
+        <h3>500+</h3>
+        <p>Bed Availability</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-hospital"></i>
+        <h3>800+</h3>
+        <p>Oxygen Availability</p>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>Oxygen Facility</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
+            <a href=" {% url 'oxygen-page' %} " class="btn"> Book oxygen Cylinders <span class="fas fa-chevron-right"></span> </a>
         </div>
-    </center>
+
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>Bed facility</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
+            <a href=" {% url 'beds-page' %} " class="btn"> Book Hospital Beds <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Blood</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{% static 'image/about-img.svg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>we provide oxygen and beds to those in need </h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
+            <a href="#" id="aboutBtn" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- doctors section starts  -->
+
+
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> our <span> Team </span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'image/doc-1.jpg' %}" alt="">
+            <h3>Gourav Kumar Singh</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'image/doc-1.jpg' %}" alt=""> 
+            <h3>Mansi Upreti</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="{% static 'image/doc-3.jpg' %}" alt="">
+            <h3>Mukul Upadhyay </h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class='fab fa-facebook-f'></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="{% static 'image/doc-3.jpg' %}" alt="">
+            <h3>Mukul Upadhyay</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="review" id="review">
+    
+    <h1 class="heading"> REVIEWS </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'image/pic-1.png' %}" alt="">
+            <h3>Madhur Sharma </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'image/pic-3.png' %}" alt="">
+            <h3>Tanveer Raza</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'image/pic-2.png' %}" alt="">
+            <h3>Dipanshi Rawat</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- 
+review section ends
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> About </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Beds </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Oxygen </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> reviews </a>
+        </div>
+
+        <div class="box">
+            <h3>our services</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> bed facility  </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> oxygen facility  </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> blood donation  </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> free checkup  </a>
+            
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +91-7428621255 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +91-7017414967 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> raghav.harshita21@gmail.com</a>
+            <a href="#"> <i class="fas fa-envelope"></i> mukulupadhyaya2007@gmail.com </a>
+            <!-- <a href="#"> <i class="fas fa-map-marker-alt"></i> Ghaziabad, India - 201002 </a> -->
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href=" "> <i class="fab fa-facebook-f"></i> facebook </a>
+            
+            <a href=" "> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>Harshita Raghav</span>  | all rights reserved </div>
+
+    <a href="#"> <i class="fas fa-envelope"></i> raghav.harshita21@gmail.com</a> 
 {% endblock content %}
+
+

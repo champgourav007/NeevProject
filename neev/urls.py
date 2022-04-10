@@ -21,5 +21,5 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("oxygenCylinder.urls")),
-    # path('login/', include('authenticationAPI.urls')),
+    path('login/', include('authenticationAPI.urls')),
 ]

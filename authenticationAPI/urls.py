@@ -1,5 +1,5 @@
 from django.urls import path
-
-# urlpatterns = [
-#     path()
-# ]
+from .views import hospitalAPIView
+urlpatterns = [
+    path("", hospitalAPIView, name="hospital-api-view"),
+]

@@ -1,0 +1,124 @@
+ {% extends 'index.html' %}
+ {% load static %}
+ 
+    {% block title %}
+    <title>Oxygen Cylinder</title>
+    {% endblock title %}
+    
+    {% block cssfiles %}
+   
+    <link rel="stylesheet" href=" {% static 'oxygenCylinder/css/style.css' %} ">
+    <link rel="stylesheet" href="{% static 'oxygenCylinder/css/table.css' %}">
+    <link rel="stylesheet" href="{% static 'oxygenCylinder/css/button.css' %}">
+    {% endblock cssfiles %}
+
+
+{% block content %}
+
+<section id="header-section">
+  <h2 id="heading">Search for oxygen cylinders</h2>
+  <br>
+  <br>
+  <table class="table1" height="30%" width="50%"> 
+    <tr>
+      <td>
+      <form  action=" {% url 'oxygen-page' %} " id="form-state" method="POST">
+        {% csrf_token %}
+        <div  class="dropdown-content1">
+          <select id="state-select" name="state"  class="dropbtn" >
+            <option  name="">Select State</option>
+
+            {% for state in states %}
+               <option name="{{state.id}}">{{state.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </form>
+      </td>
+      <td>
+        
+      <form action="{% url 'oxygen-list' %}" id="form-city" method="POST">
+        {% csrf_token %}
+        <div class="dropdown-content1">
+          <select name="city" id="city-select" class="dropbtn" >
+            <option value="">Select City</option>
+            {% for city in cities %}
+               <option value="{{city.id}}">{{city.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        
+      </form>
+      </td>
+    </tr>
+  </table>
+</section>
+      <section>
+        <h4>RESULTS</h4>
+        <br>
+          <table class="table2" cellpadding="1" cellspacing="2" border="4">
+          
+              <tr>
+                <th class="heading1">S.No</th>
+                <th class="heading2">Hospital Name</th>
+                <th class="heading3">Category</th>
+                <th class="heading4">Availabilty</th>
+                <th class="heading5">Last Updated</th>
+                <th class="heading6">Booking</th>
+              </tr>
+              
+                {% if services %}
+                  {% for service in services %}
+                  <tr id="oxygen-row" >
+                  <div>
+                    <td>{{service.pk}}</td>
+                    <td>{{service.name}}</td>
+                    <td>Oxygen</td>
+                      <td>{{service.services.available_oxygen_cylinders}}/{{service.services.total_oxygen_cylinders}}</td>
+                      <td>{{service.services.last_updated}}</td>
+                      <td>
+                        {% if service.services.available_oxygen_cylinders %}
+                        <button style= "background-color: #16a085;text-align:center;font-size: 16px;text-decoration: double,display: inline-block,border-radius: 2px;border: 2px solid black; width: 100px">
+                            Book Now
+                        </button>
+                        {% endif %}
+                      </td>
+                    
+                  </div>
+                  </tr>
+                  {% endfor %}
+
+                {% else %}
+                 <tr><div><td colspan="6">{{"No Data Found"}}</td></div></tr> 
+
+                {% endif %}
+              
+
+          </table>
+      
+      </section>
+
+{% endblock content %}
+
+
+
+
+{% block scriptfiles %}
+<script>
+    var state_form = document.getElementById("form-state");
+    var city_form = document.getElementById("form-city");
+    var state_select = document.getElementById("state-select");
+    var city_select = document.getElementById("city-select");
+    console.log(city_select, state_select);
+    function onStateFormSubmit(){
+        state_form.submit();
+    }
+    function onCityFormSubmit(){
+
+        city_form.submit();
+    }
+    state_select.onchange = onStateFormSubmit;
+    city_select.onchange = onCityFormSubmit;
+</script>
+
+{% endblock scriptfiles %}
