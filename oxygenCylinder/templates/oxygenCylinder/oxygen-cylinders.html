@@ -60,6 +60,7 @@
     </tr>
   </table>
 </section>
+
       <section>
         <h4>RESULTS</h4>
         <br>
@@ -76,26 +77,33 @@
               </tr>
               
                 {% if services %}
+                 
                   {% for service in services %}
                   <tr id="oxygen-row" >
                   <div>
-                    <td>{{service.pk}}</td>
-                    <td>{{service.name}}</td>
+                    <td id="{{service.id}}" >{{ forloop.counter }}</td>
+                    <td>{{service.name}}, {{service.address}}, <a href="mailto:{{service.email}}">{{service.email}}</a></td>
                     <td>Oxygen</td>
-                      <td>{{service.services.available_oxygen_cylinders}}/{{service.services.total_oxygen_cylinders}}</td>
+                      <td style="font-weight: bold;">{{service.services.available_oxygen_cylinders}}</td>
                       <td>{{service.services.last_updated}}</td>
                       <td>{{ service.phone_number }}</td>
                       <td>
                         {% if service.services.available_oxygen_cylinders %}
-                        <button style= "background-color: #16a085;text-align:center;font-size: 16px;text-decoration: double,border-radius: 2px;border: 2px solid black; width: 80px">
+                        <button onclick="book_cylinders(this)" id="bookBtn" >
                             Book Now
                         </button>
+                        {% else %}
+                        <div id="notAvailable">
+                          Not Available
+                        </div>
+
                         {% endif %}
                       </td>
                       
                     
                   </div>
                   </tr>
+                  
                   {% endfor %}
 
                 {% else %}
@@ -119,8 +127,11 @@
     var city_form = document.getElementById("form-city");
     var state_select = document.getElementById("state-select");
     var city_select = document.getElementById("city-select");
+    let state = null;
     console.log(city_select, state_select);
     function onStateFormSubmit(){
+        state = state_select.value;
+        console.log(state)
         state_form.submit();
     }
     function onCityFormSubmit(){
@@ -130,5 +141,7 @@
     state_select.onchange = onStateFormSubmit;
     city_select.onchange = onCityFormSubmit;
 </script>
+
+<script src=" {% static 'oxygenCylinder/js/book.js' %} "></script>
 
 {% endblock scriptfiles %}

@@ -1,8 +1,9 @@
+from json import load
 from django.shortcuts import render
 from .models import Cities, State, Hospital
 
 
-def load_state_cities(clicked_city=None, clicked_state=None):
+def load_state_cities(clicked_state=None, clicked_city=None):
     states = State.objects.all()
     cities = Cities.objects.all()
     return {
@@ -26,9 +27,10 @@ def on_load_oxygen(request):
             context = load_state_cities()
             context["cities"] = cities
             context["clickedstate"] = request.POST["state"]
-            print(context["clickedstate"])
-            return render(request, "oxygenCylinder/oxygen-cylinders.html",context=context)
-    context = load_state_cities()
+
+    if request.method == "GET":
+        context = load_state_cities()
+
     return render(request, "oxygenCylinder/oxygen-cylinders.html", context=context)
 
 
@@ -40,10 +42,13 @@ def load_oxygen_cylinder(request):
         context = load_state_cities()
         context["services"] = hospitals
         context["clickedcity"] = Cities.objects.get(pk=cityId)
-        print(context["clickedcity"])
-        return render(request, "oxygenCylinder/oxygen-cylinders.html", context=context)
+        stateId = Cities.objects.get(pk=cityId).state_id
+        context["clickedstate"] = State.objects.get(id=stateId)
+        context["cities"] = Cities.objects.filter(state_id=stateId)
 
-    context = load_state_cities()
+    if request.method == "GET":
+        context = load_state_cities()
+
     return render(request, "oxygenCylinder/oxygen-cylinders.html", context=context)
 
 
@@ -53,13 +58,13 @@ def on_load_beds(request):
         if request.POST.get("state"):
             state = State.objects.get(name=request.POST["state"])
             cities = Cities.objects.filter(state_id=state.pk)
-            context = {
-                "states" : State.objects.all(),
-                "cities" : cities,
-                "services" : None,
-            }
-            return render(request, "oxygenCylinder/hospital-beds.html",context=context)
-    context = load_state_cities()
+            context = load_state_cities()
+            context["cities"] = cities
+            context["clickedstate"] = request.POST["state"]
+
+    if request.method == "GET":
+        context = load_state_cities()
+
     return render(request, "oxygenCylinder/hospital-beds.html", context=context)
 
 
@@ -70,8 +75,13 @@ def load_hospital_beds(request):
         hospitals = Hospital.objects.filter(city_id=cityId)
         context = load_state_cities()
         context["services"] = hospitals
-        return render(request, "oxygenCylinder/hospital-beds.html", context=context)
+        context["clickedcity"] = Cities.objects.get(pk=cityId)
+        stateId = Cities.objects.get(pk=cityId).state_id
+        context["clickedstate"] = State.objects.get(id=stateId)
+        context["cities"] = Cities.objects.filter(state_id=stateId)
 
-    context = load_state_cities()
+    if request.method == "GET":
+        context = load_state_cities()
+
     return render(request, "oxygenCylinder/hospital-beds.html", context=context)
 

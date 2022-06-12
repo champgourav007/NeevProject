@@ -75,17 +75,22 @@
                   {% for service in services %}
                   <tr id="beds-row" style="font-size:2px;">
                   <div>
-                    <td>{{service.pk}}</td>
-                    <td>{{service.name}}</td>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{service.name}}, {{service.address}}, <a href="mailto:{{service.email}}">{{service.email}}</a></td>
                     <td>Hospital Beds</td>
-                      <td>{{service.services.available_beds}}/{{service.services.total_beds}}</td>
+                      <td style="font-weight: bold;">{{service.services.available_beds}}</td>
                       <td>{{service.services.last_updated}}</td>
                       <td>{{ service.phone_number }}</td>
                       <td>
-                        {% if service.services.available_oxygen_cylinders %}
-                        <button style= "background-color: #16a085;text-align:center;font-size: 16px;text-decoration: double,border-radius: 2px;border: 2px solid black; width: 80px">
+                        {% if service.services.available_beds %}
+                        <button id="bookBtn" >
                             Book Now
                         </button>
+
+                        {% else %}
+                        <div id="notAvailable">
+                          Not Available
+                        </div>
                         {% endif %}
                       </td>
                   </div>
@@ -122,4 +127,6 @@
     state_select.onchange = onStateFormSubmit;
     city_select.onchange = onCityFormSubmit;
 </script>
+
+<script src=" {% static 'oxygenCylinder/js/book.js' %} "></script>
 {% endblock scriptfiles %}
