@@ -20,36 +20,44 @@
   <br>
   <table class="table1" height="30%" width="50%"> 
     <tr>
-      <td>
+      <td width="50%">
+      <div>State</div>
       <form  action=" {% url 'beds-page' %} " id="form-state" method="POST">
         {% csrf_token %}
-        <div  class="dropdown-content1">
+        <div  class="dropdown-content">
           <select id="state-select" name="state"  class="dropbtn" >
-            {% if clickedstate %}
-              <option  name="">{{clickedstate}}</option>
+            {% if not clickedstate %}
+              <option  name="">Select State</option>
             {% endif %}
-            <option  name="">Select State</option>
-
-
             {% for state in states %}
-               <option name="{{state.id}}">{{state.name}}</option>
+                {% if state.name == clickedstate %}
+                  <option name="{{state.id}}" selected>{{state.name}}</option>
+                {% else %}
+                  <option name="{{state.id}}">{{state.name}}</option>
+                {% endif %}
             {% endfor %}
           </select>
         </div>
       </form>
       </td>
-      <td>
+      <td width="50%">
+      <div>City</div>
       <form action="{% url 'hospital-beds' %}" id="form-city" method="POST">
         {% csrf_token %}
-        <div class="dropdown-content1">
+        <div class="dropdown-content">
           <select name="city" id="city-select" class="dropbtn" >
-            {% if clickedcity %}
-              <option value="">{{clickedcity}}</option>
-              {% else %}
+
+            {% if not clickedcity %}
               <option value="">Select City</option>
             {% endif %}
+
             {% for city in cities %}
-               <option value="{{city.id}}">{{city.name}}</option>
+                {% if city.name == clickedcity %}
+                    <option value="{{city.id}}" selected>{{city.name}}</option>
+                
+                {% else %}
+                    <option value="{{city.id}}">{{city.name}}</option>
+                {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -58,52 +66,55 @@
     </tr>
   </table>
 </section>
-      <section>
-        <h4>RESULTS</h4>
-        <br>
-          <table class="table2" cellpadding="1" cellspacing="2" border="4">
-              <tr>
-                <th class="heading1">S.No</th>
-                <th class="heading2">Hospital Name</th>
-                <th class="heading3">Category</th>
-                <th class="heading4">Availabilty</th>
-                <th class="heading5">Last Updated</th>
-                <th class="heading4">Phone No</th>
-                <th class="heading6">Booking</th>
-              </tr>
-                {% if services %}
-                  {% for service in services %}
-                  <tr id="beds-row" style="font-size:2px;">
-                  <div>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{service.name}}, {{service.address}}, <a href="mailto:{{service.email}}">{{service.email}}</a></td>
-                    <td>Hospital Beds</td>
-                      <td style="font-weight: bold;">{{service.services.available_beds}}</td>
-                      <td>{{service.services.last_updated}}</td>
-                      <td>{{ service.phone_number }}</td>
-                      <td>
-                        {% if service.services.available_beds %}
-                        <button id="bookBtn" >
-                            Book Now
-                        </button>
 
-                        {% else %}
-                        <div id="notAvailable">
-                          Not Available
-                        </div>
-                        {% endif %}
-                      </td>
+<section class="table-section">
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th class="heading1">S.No</th>
+          <th class="heading2">Hospital Name</th>
+          <th class="heading3">Email</th>
+          <th class="heading4">Availabilty</th>
+          <th class="heading5">Last Updated</th>
+          <th class="heading4">Phone No</th>
+          <th class="heading6">Booking</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% if services %}
+            {% for service in services %}
+            {% if forloop.counter|divisibleby:"2" %}
+                <tr class="active-row" id="beds-row" style="font-size:15px;">
+              {% else %}
+                  <tr class="active-row" id="beds-row" style="font-size:15px;">
+            {% endif %}
+            <div>
+              <td>{{ forloop.counter }}</td>
+              <td>{{service.name}}, {{service.address}}</td>
+              <td><a href="mailto:{{service.email}}">{{service.email}}</a></td>
+                <td style="font-weight: bold;">{{service.services.available_beds}}</td>
+                <td>{{service.services.last_updated}}</td>
+                <td>{{ service.phone_number }}</td>
+                <td>
+                  {% if service.services.available_beds %}
+                  <button class="button-17" role="button">Button 17</button>
+
+                  {% else %}
+                  <div id="notAvailable">
+                    Not Available
                   </div>
-                  </tr>
-                  {% endfor %}
-                {% else %}
-                 <tr><div><td colspan="7">{{"No Data Found"}}</td></div></tr>
-                {% endif %} 
-              
+                  {% endif %}
+                </td>
+            </div>
+            </tr>
+            {% endfor %}
+          {% else %}
+            <tr><div><td colspan="7">{{"No Data Found"}}</td></div></tr>
+          {% endif %} 
+        </tbody>
+    </table>
 
-          </table>
-      
-      </section>
+</section>
 
 {% endblock content %}
 

@@ -41,9 +41,9 @@ def load_oxygen_cylinder(request):
         hospitals = Hospital.objects.filter(city_id=cityId)
         context = load_state_cities()
         context["services"] = hospitals
-        context["clickedcity"] = Cities.objects.get(pk=cityId)
+        context["clickedcity"] = str(Cities.objects.get(pk=cityId))
         stateId = Cities.objects.get(pk=cityId).state_id
-        context["clickedstate"] = State.objects.get(id=stateId)
+        context["clickedstate"] = str(State.objects.get(id=stateId))
         context["cities"] = Cities.objects.filter(state_id=stateId)
 
     if request.method == "GET":
@@ -75,13 +75,13 @@ def load_hospital_beds(request):
         hospitals = Hospital.objects.filter(city_id=cityId)
         context = load_state_cities()
         context["services"] = hospitals
-        context["clickedcity"] = Cities.objects.get(pk=cityId)
+        context["clickedcity"] = str(Cities.objects.get(pk=cityId))
         stateId = Cities.objects.get(pk=cityId).state_id
-        context["clickedstate"] = State.objects.get(id=stateId)
+        context["clickedstate"] = str(State.objects.get(id=stateId))
         context["cities"] = Cities.objects.filter(state_id=stateId)
 
-    if request.method == "GET":
-        context = load_state_cities()
+    # if request.method == "GET":
+    #     context = load_state_cities()
 
     return render(request, "oxygenCylinder/hospital-beds.html", context=context)
 
