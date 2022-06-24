@@ -1,7 +1,7 @@
 # NEEV PROJECT
 
 * Neev is a web portal that gives you the details of bed and oxygen cylinder facility in your nearest location.
-* Some Hospitals have available ```Beds and Oxygen Cylinders``` but people were not aware of them due to the lack of a platform where this information is available.​
+* Some Hospitals have available ```Beds and Oxygen Cylinders``` but people were not aware of them due to the lack of a platform where this information is available.
 * So, this project aims to give an idea regarding the problem in the form of a platform which organizes and shows the details of available Beds and Oxygen Cylinders supply in your ```nearest location.```
 
 # High level project goals
@@ -31,8 +31,8 @@
 
 # Reference Video
 
-https://user-images.githubusercontent.com/65412890/162630114-d5cd1367-8d92-4175-a1ec-f7af8d9528e9.mp4
 
+https://user-images.githubusercontent.com/65412890/175666361-7ebca5f4-a191-4074-9878-67b3e341d027.mp4
 
 
 # Reference Images
