@@ -44,8 +44,10 @@ table.table1 {
 .content-table td {
   padding: 12px 15px;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; 
+  word-wrap: break-word;
 }
+
 
 
 .content-table tbody tr {

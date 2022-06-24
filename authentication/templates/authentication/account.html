@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Oxyhub{% endblock title %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href=" {% static 'authentication/css/style.css' %} ">
+{% endblock cssfiles %}
+
+{% block content %}
+<div class="container right-panel-active">
+	<!-- Sign Up -->
+	<div class="container__form container--signup">
+		<form action=" {% url 'signup' %} " class="form" id="form1" method="POST">
+            {% csrf_token %}
+			<h2  class="form__title">Sign Up</h2>
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{message.tags}}">{{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+			<input type="text" placeholder="Full Name" id="full_name" name="full_name" class="input" required/>
+			<input type="email" placeholder="Email" id="email1" name="email" class="input" required/>
+			<input type="password" placeholder="Password" id="password" name="password" class="input" required/>
+            <ul>
+                <li>Please Enter the password with length more than 5</li>
+            </ul>
+			<input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" class="input" required/>
+            <input type="submit" id="signupBtn" value="sign up" class="btn">
+		</form>
+	</div>
+
+	<!-- Sign In -->
+	<div class="container__form container--signin">
+		<form action=" {% url 'signin' %} " class="form" id="form2" method="POST">
+            {% csrf_token %}
+			<h2 class="form__title">Login In</h2>
+			<input type="email" placeholder="Email" id="email2" name="email" class="input" required/>
+			<input type="password" placeholder="Password" name="password" class="input" required/>
+			<a style="font-size:15px;" href="#" class="link">Forgot your password?</a>
+			<input type="submit" id="signinBtn" value="log in" class="btn">
+		</form>
+	</div>
+
+	<!-- Overlay -->
+	<div class="container__overlay">
+		<div class="overlay">
+			<div class="overlay__panel overlay--left">
+				<button class="btn" id="signIn">Login In</button>
+			</div>
+			<div class="overlay__panel overlay--right">
+				<button class="btn" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+
+{% block scriptfiles %}
+    <script src=" {% static 'authentication/js/style.js' %} "></script>
+{% endblock scriptfiles %}

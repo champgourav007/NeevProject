@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uriy3l+i79v0j@ti2(wy2beoqykkjx8#bxj54vv89e2+_*iv(u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'oxy-hub.herokuapp.com',
@@ -42,9 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'oxygenCylinder',
-    'authentication',
-    'corsheaders',
-    'admin_searchable_dropdown',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -132,19 +130,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
-
-# STATIC_ROOT = BASE_DIR / "static"
-
-# STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"

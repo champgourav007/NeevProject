@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href=" {% static 'css/favicon.ico' %} " type="image/x-icon">
     {% block title %}{% endblock title %}
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- custom css file link  -->
-    {% block cssfiles %}{% endblock cssfiles %}
     <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    {% block cssfiles %}{% endblock cssfiles %}
     <!-- new css files  -->
 
 </head>
@@ -20,13 +21,14 @@
 <!-- header section starts  -->
 <header class="header">
 
-    <a href=" {% url 'home-page' %} " class="logo"> <i class="fas fa-heartbeat"></i> OxyHub. </a>
+    <a href=" {% url 'home-page' %} " class="logo"> <i class="fas fa-heartbeat"></i> OxyHub </a>
 
     <nav class="navbar">
         <a href="#home">About US </a>
         <a href="#services">Services</a>
         <a href="#book">book</a>
         <a href="#review">Reviews</a>
+        <a style="padding-left:5px;" href="/account"><button id="accountBtn" class="button-18" role="button">SignUp</button></a>
     </nav>
 
     <div id="menu-btn" class="fas fa-bars"></div>
@@ -40,7 +42,8 @@
 
 <!-- custom js file link  -->
 {% comment %} <script src="js/script.js"></script> {% endcomment %}
-{% block scriptfiles %}{% endblock scriptfiles %}
+{% block scriptfiles %}
+{% endblock scriptfiles %}
 
 </body>
 </html>
