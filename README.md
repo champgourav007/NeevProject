@@ -54,10 +54,6 @@ https://user-images.githubusercontent.com/65412890/162630114-d5cd1367-8d92-4175-
 
 <img src="extrafiles/images/img9.png">
 
-<img src="extrafiles/images/img10.png">
-
-<img src="extrafiles/images/img11.png">
-
 
 # To Do
 1. Functionality of Booking.
