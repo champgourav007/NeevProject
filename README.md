@@ -1,3 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<p align="center">
+    <img src="https://img.shields.io/github/forks/champgourav007/NeevProject.svg">
+    <img src="https://img.shields.io/github/stars/champgourav007/NeevProject.svg">
+    <br>
+    <a href="https://oxy-hub.herokuapp.com/">
+        <img src="https://img.shields.io/badge/Oxyhub-000000?style=for-the-badge&logo=About.me&logoColor=white">
+    </a>
+</p>
+
+<p align="center">
+<i style="font-size: 30px; color:pink;" class="fas fa-heartbeat"> OxyHub</i>
+</p>
+
+
+
 # NEEV PROJECT
 
 * Neev is a web portal that gives you the details of bed and oxygen cylinder facility in your nearest location.
@@ -53,6 +69,16 @@ https://user-images.githubusercontent.com/65412890/175666361-7ebca5f4-a191-4074-
 <img src="extrafiles/images/img8.png">
 
 <img src="extrafiles/images/img9.png">
+
+# Languages Used
+<p> 
+    <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white">
+    <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
+
+</p>
 
 
 # To Do

@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import State, Cities, Hospital, Services
-from admin_searchable_dropdown.filters import AutocompleteFilter
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
